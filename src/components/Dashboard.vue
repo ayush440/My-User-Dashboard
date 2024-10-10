@@ -15,18 +15,20 @@
       <!-- Main content area -->
       <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <!-- Welcome message -->
-          <div class="bg-teal-700 rounded-lg p-6 mb-6 text-white">
-            <h2 class="text-2xl font-bold">Hello, Sourabh</h2>
-            <p class="mt-1 text-teal-200">Welcome back! Let's Start your trade with a best strategies by us</p>
-            <a href="#" class="text-yellow-300 hover:text-yellow-100 mt-2 inline-block">View Profile >></a>
-          </div>
-
-          <!-- Metrics -->
-          <div class="grid grid-cols-1 gap-6 sm:grid-cols-3 mb-6">
-            <MetricCard title="Total Users" :value="1527" icon="UsersIcon" />
-            <MetricCard title="Strategy" :value="4" icon="CogIcon" />
-            <MetricCard title="Total Orders" :value="12" icon="CubeIcon" />
+          <!-- Welcome message and Metrics -->
+          <div class="flex flex-col md:flex-row gap-6 mb-6">
+            <!-- Welcome message -->
+            <div class="md:w-1/2 bg-teal-600 rounded-lg p-6 text-white">
+              <h2 class="text-2xl font-bold">Hello, Sourabh</h2>
+              <p class="mt-1 text-teal-100">Welcome back! Let's Start your trade with a best strategies by us</p>
+              <a href="#" class="text-yellow-300 hover:text-yellow-100 mt-2 inline-block">View Profile >></a>
+            </div>
+            <!-- Metrics Cards -->
+            <div class="md:w-1/2 grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <MetricItem title="Total Users" :value="1527" icon="UserGroupIcon" accentColor="indigo" iconColor="indigo" />
+              <MetricItem title="Strategy" :value="4" icon="CogIcon" accentColor="red" iconColor="red" />
+              <MetricItem title="Total Orders" :value="12" icon="CubeIcon" accentColor="green" iconColor="green" />
+            </div>
           </div>
 
           <!-- Today's Profit and Positions -->
@@ -35,19 +37,19 @@
             <div class="bg-white shadow rounded-lg p-6">
               <div class="flex justify-between items-center mb-4">
                 <h3 class="text-lg font-semibold text-gray-900">Today's Profit</h3>
-                <button class="bg-teal-700 text-white px-3 py-1 rounded">Square off</button>
+                <button class="bg-teal-600 text-white px-3 py-1 rounded">Square off</button>
               </div>
-              <div class="text-3xl font-bold text-gray-900 mb-4">₹1,09,000</div>
+              <div class="text-3xl font-bold text-gray-900 mb-[-4]">₹1,09,000</div>
               <div class="h-16 w-full">
-                <!-- Placeholder for chart -->
-                <div class="w-full h-full bg-gray-200 rounded"></div>
+              
+               
               </div>
               <div class="mt-4 space-y-2">
-                <ProfitItem strategy="Super Hero Strategy" amount="1000" color="bg-indigo-100 linear" />
-                <ProfitItem strategy="Super Hero Strategy" amount="1500" color="bg-green-100" />
-                <ProfitItem strategy="Super Hero Strategy" amount="1500" color="bg-yellow-100" />
-                <ProfitItem strategy="Super Hero Strategy" amount="1500" color="bg-blue-100" />
-                <ProfitItem strategy="Super Hero Strategy" amount="1500" color="bg-pink-100" />
+                <ProfitItem strategy="Super Hero Strategy" amount="1000" color="bg-gradient-to-r from-[#D4D6FF] to-white" />
+<ProfitItem strategy="Super Hero Strategy" amount="1500" color="bg-gradient-to-r from-green-100 to-white" />
+<ProfitItem strategy="Super Hero Strategy" amount="1500" color="bg-gradient-to-r from-yellow-100 to-white" />
+<ProfitItem strategy="Super Hero Strategy" amount="1500" color="bg-gradient-to-r from-blue-100 to-white" />
+<ProfitItem strategy="Super Hero Strategy" amount="1500" color="bg-gradient-to-r from-pink-100 to-white" />
               </div>
             </div>
 
@@ -55,7 +57,7 @@
             <div class="bg-white shadow rounded-lg p-6">
               <div class="flex justify-between items-center mb-4">
                 <h3 class="text-lg font-semibold text-gray-900">Positions</h3>
-                <a href="#" class="text-teal-700 hover:text-teal-900">See all</a>
+                <a href="#" class="text-teal-600 hover:text-teal-800">See all</a>
               </div>
               <PositionsTable :positions="positions" />
             </div>
@@ -69,7 +71,7 @@
 <script setup>
 import { ref } from 'vue'
 import Sidebar from './Sidebar.vue'
-import MetricCard from './MetricCard.vue'
+import MetricItem from './MetricItem.vue'
 import ProfitItem from './ProfitItem.vue'
 import PositionsTable from './PositionsTable.vue'
 
